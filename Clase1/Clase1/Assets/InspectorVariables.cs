@@ -7,12 +7,10 @@ public class InspectorVariables : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
     {
-        Debug.Log("Nice biatch");
 	}
 	
 	// Update is called once per frame
 	void Update ()
     {
-        Debug.Log("BIATCH");
 	}
 }
