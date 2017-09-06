@@ -13,6 +13,6 @@ public class SunMove : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        transform.position += Vector3.right * Step * Time.deltaTime;
+        //transform.position += Vector3.right * Step * Time.deltaTime;
     }
 }

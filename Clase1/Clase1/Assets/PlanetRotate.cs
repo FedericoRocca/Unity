@@ -22,7 +22,7 @@ public class PlanetRotate : MonoBehaviour {
 
         if( Step >= 10 )
         {
-            Step = 0;
+            /*Step = 0;
             Color++;
             if( Color >= 10 )
             {
@@ -74,13 +74,13 @@ public class PlanetRotate : MonoBehaviour {
 
 
             }
-
+            */
         }
         else
         {
             Step++;
         }
 
-
+    
     }
 }
