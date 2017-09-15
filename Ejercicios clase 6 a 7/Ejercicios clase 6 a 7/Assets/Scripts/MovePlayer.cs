@@ -35,4 +35,16 @@ public class MovePlayer : MonoBehaviour {
         }
 
     }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        
+        if( collision.gameObject.tag == "Enemy" )
+        {
+            Time.timeScale = 0;
+            Debug.Log("Perdiste!");
+        }
+
+    }
+
 }
