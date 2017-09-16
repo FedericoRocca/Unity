@@ -32,5 +32,10 @@ public class MoveFightingPlayer : MonoBehaviour {
         {
             transform.position = transform.position + (Vector3.back * Time.deltaTime * Step);
         }
+
+        if( transform.position.y <= -5 )
+        {
+            transform.position = new Vector3(0, 1, 0);
+        }
     }
 }

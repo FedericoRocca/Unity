@@ -1,0 +1,4 @@
+sceneSetups:
+- path: Assets/MemoTest.unity
+  isLoaded: 1
+  isActive: 1
