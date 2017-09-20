@@ -1,1 +1,4 @@
-sceneSetups: []
+sceneSetups:
+- path: C:/Users/frocc/Unity/Ejercicios clase 6 a 7/Ejercicios clase 6 a 7/Assets/Mario.unity
+  isLoaded: 1
+  isActive: 1

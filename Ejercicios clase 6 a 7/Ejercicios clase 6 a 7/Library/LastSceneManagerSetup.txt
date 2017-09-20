@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Mario.unity
+- path: Assets/Ejercicio1.unity
   isLoaded: 1
   isActive: 1
