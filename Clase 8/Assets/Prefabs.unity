@@ -230,6 +230,7 @@ GameObject:
   - component: {fileID: 1683570648}
   - component: {fileID: 1683570647}
   - component: {fileID: 1683570651}
+  - component: {fileID: 1683570652}
   m_Layer: 0
   m_Name: Grua
   m_TagString: Untagged
@@ -313,7 +314,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c43397c8e4269ee4f930e5c487198c1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 10
+  Speed: 8
+--- !u!114 &1683570652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1683570646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e48ace670e893c24084a2c00c5db10ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   CubePrefab: {fileID: 1525795653508342, guid: 04dba71d83ac8d247af8136d61223e40, type: 2}
 --- !u!1 &1886756459
 GameObject:

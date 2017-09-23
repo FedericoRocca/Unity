@@ -6,7 +6,6 @@ public class MoveGrua : MonoBehaviour {
 
 	private bool MovingLeft = true;
     public float Speed = 0;
-    public GameObject CubePrefab;
 
 	void Start () {
 		
@@ -30,11 +29,6 @@ public class MoveGrua : MonoBehaviour {
         else if(transform.position.x <= -5)
         {
             MovingLeft = false;
-        }
-
-        if( true )
-        {
-
         }
 
 	}
