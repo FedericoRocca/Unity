@@ -18,7 +18,10 @@ public class MoveMisile : MonoBehaviour {
 
 	void LateUpdate()
 	{
-		transform.LookAt(PlayerPos);
+		if( PlayerPos != null )
+		{
+			transform.LookAt(PlayerPos);
+		}
 	}
 
 	void OnCollisionEnter(Collision collision)

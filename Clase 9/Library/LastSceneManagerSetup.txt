@@ -1,4 +1,4 @@
 sceneSetups:
-- path: C:/Users/frocc/Unity/Ejercicios clase 6 a 7/Ejercicios clase 6 a 7/Assets/Ejercicio1.unity
+- path: Assets/Misilles.unity
   isLoaded: 1
   isActive: 1
