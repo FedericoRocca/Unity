@@ -20,13 +20,14 @@ public class AsignRandomColor : MonoBehaviour {
         {
 
             Cards[i].GetComponent<Renderer>().material.color = Random.ColorHSV(); // Asigno un color aleatorio a la carta
-            for(int a = 0; a < Cards.Length; a++) // Como cada carta tiene que tener su par, asigno el color de la carta a otra en la grilla
+            
+            while(IsAssigned[i] == false)
             {
-
-                if( IsAssigned[a] == false ) // Si no fue asignado el color, busco otra
+                int RandPos = Random.Range(0, Cards.Length);
+                if ( IsAssigned[RandPos] == false )
                 {
-                    Cards[a].GetComponent<Renderer>().material.color = Cards[i].GetComponent<Renderer>().material.color;
-                    IsAssigned[a] = true;
+                    Cards[RandPos].GetComponent<Renderer>().material.color = Cards[i].GetComponent<Renderer>().material.color;
+                    IsAssigned[RandPos] = true;
                 }
 
             }
