@@ -6,11 +6,12 @@ public class Shoot : MonoBehaviour {
 
 	public GameObject EnemyProjectile;
 	public GameObject WeaponPos;
-	private const float ShootTime = 2.0f;
+	private float ShootTime;
 	private float ShootAt;
 
 	// Use this for initialization
 	void Start () {
+		ShootTime = Random.Range(1.0f, 5.0f);
 		ShootAt = ShootTime;
 	}
 	
@@ -21,9 +22,17 @@ public class Shoot : MonoBehaviour {
 
 		if( ShootAt <= 0.0f )
 		{
-			Instantiate( EnemyProjectile, WeaponPos.transform.position, Quaternion.identity );
+			GameObject Bullet =  Instantiate( EnemyProjectile, WeaponPos.transform.position, Quaternion.Euler( 90, 0, 0 ) );
+			Destroy(Bullet, 3.0f);
 			ShootAt = ShootTime;
 		}
 
 	}
+
+    void AllShoot()
+	{
+		GameObject Bullet =  Instantiate( EnemyProjectile, WeaponPos.transform.position, Quaternion.identity );
+		Destroy(Bullet, 3.0f);
+	}
+
 }
