@@ -11,7 +11,7 @@ public class Shoot : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		ShootTime = Random.Range(1.0f, 5.0f);
+		ShootTime = Random.Range(1.0f, 20.0f);
 		ShootAt = ShootTime;
 	}
 	
@@ -29,10 +29,11 @@ public class Shoot : MonoBehaviour {
 
 	}
 
-    void AllShoot()
+    public void AllShoot()
 	{
-		GameObject Bullet =  Instantiate( EnemyProjectile, WeaponPos.transform.position, Quaternion.identity );
+		GameObject Bullet =  Instantiate( EnemyProjectile, WeaponPos.transform.position, Quaternion.Euler( 90, 0, 0 ) );
 		Destroy(Bullet, 3.0f);
 	}
+
 
 }

@@ -140,6 +140,7 @@ GameObject:
   - component: {fileID: 4008117449845364}
   - component: {fileID: 114795239498528014}
   - component: {fileID: 114033398371760434}
+  - component: {fileID: 114243227548391156}
   m_Layer: 0
   m_Name: EnemyShipNew
   m_TagString: Untagged
@@ -545,6 +546,17 @@ MonoBehaviour:
   EnemyProjectile: {fileID: 1000012779719912, guid: 9556a12952dcee347990c7ff509b0fc6,
     type: 2}
   WeaponPos: {fileID: 1401654755386102}
+--- !u!114 &114243227548391156
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1893469068696360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38e68b6a77fbda745a6def97b16f8bb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114795239498528014
 MonoBehaviour:
   m_ObjectHideFlags: 1
