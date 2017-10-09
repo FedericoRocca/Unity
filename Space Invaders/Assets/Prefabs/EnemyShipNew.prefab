@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4511597438480006}
   - component: {fileID: 33939844298219668}
   - component: {fileID: 23427477978289104}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Secondary_wing_Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 4022580031897066}
   - component: {fileID: 33516341954252966}
   - component: {fileID: 23718445829895268}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LeftEngine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55,7 +55,7 @@ GameObject:
   - component: {fileID: 4370288657186864}
   - component: {fileID: 33483199244736064}
   - component: {fileID: 23451289913288546}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Weapon_Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,7 +72,7 @@ GameObject:
   - component: {fileID: 4391351347985534}
   - component: {fileID: 33582590530893124}
   - component: {fileID: 23311743168188292}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 4511959294301440}
   - component: {fileID: 33883976769018422}
   - component: {fileID: 23089198610070858}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: 'Secondary_wing_Right '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -106,7 +106,7 @@ GameObject:
   - component: {fileID: 4656225229887120}
   - component: {fileID: 33344719692894542}
   - component: {fileID: 23314625853249430}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: 'Weapon_Right '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -123,7 +123,7 @@ GameObject:
   - component: {fileID: 4415779665399898}
   - component: {fileID: 33938810714177786}
   - component: {fileID: 23454498497393800}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RightEngine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -141,7 +141,7 @@ GameObject:
   - component: {fileID: 114795239498528014}
   - component: {fileID: 114033398371760434}
   - component: {fileID: 114243227548391156}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: EnemyShipNew
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -568,5 +568,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79e4705e2f7f29d41800c11a91636fe1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoveMentTime: 1
-  Step: 2
+  MoveVelocity: 5
