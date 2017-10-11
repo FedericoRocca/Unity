@@ -21,19 +21,21 @@ public class MovePlayer : MonoBehaviour {
 		
 		if( Input.GetKey( KeyCode.RightArrow ) && gameObject.GetComponent<Transform>().position.x <= 7.12f )
 		{
-			gameObject.GetComponent<Transform>().Translate(Vector3.right * Step * Time.deltaTime);
+			gameObject.GetComponent<Transform>().Translate(Vector3.right * Step * Time.deltaTime, Space.World);
 
-			/* Por qué carajos no se limita la rotacion?
-			   Por que chota toma la rotacion alrededor de un centro cualquiera???
-			if( transform.rotation.z >= -45 )
+			if( transform.rotation.z >= -0.3f)
 			{
-				transform.Rotate( Vector3.back );
+				transform.Rotate( -Vector3.forward * Time.deltaTime * 200);
 			}
-			*/
 
 		} else if( Input.GetKey( KeyCode.LeftArrow ) && gameObject.GetComponent<Transform>().position.x >= -7.12f )
 		{
-			gameObject.GetComponent<Transform>().Translate(Vector3.left * Step * Time.deltaTime);
+			gameObject.GetComponent<Transform>().Translate(Vector3.left * Step * Time.deltaTime, Space.World);
+
+			if( transform.rotation.z <= 45 )
+			{
+				transform.Rotate( Vector3.forward * Time.deltaTime * 200);
+			}
 		}
 
 		
