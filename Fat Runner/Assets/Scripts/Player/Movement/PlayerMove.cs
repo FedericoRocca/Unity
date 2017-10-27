@@ -20,7 +20,7 @@ public class PlayerMove : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
 
 		// Movimiento izquierda
 		if( Input.GetKey( KeyCode.A ) || Input.GetKey( KeyCode.LeftArrow ) )
@@ -69,6 +69,8 @@ public class PlayerMove : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D other)
 	{
 
+		//* Al momento de colisionar, está cambiando la posicion de y, por ende está matando al jugador incorrectamente */
+		
 		if( other.transform.tag.Equals("Floor") )
 		{
 			IsInAir = false;
