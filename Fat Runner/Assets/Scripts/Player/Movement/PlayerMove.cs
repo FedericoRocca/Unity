@@ -15,7 +15,10 @@ public class PlayerMove : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		// Obtengo el rigidbody, para poder agregarle fuerza y demas
 		MyRigidBody = transform.GetComponent<Rigidbody2D>();
+
+		// Se restrinje el salto en el primer frame, evitando un salto en el aire
 		IsInAir = true;
 	}
 	
@@ -42,16 +45,19 @@ public class PlayerMove : MonoBehaviour {
 
 	}
 
+	// Movimiento hacia la izquierda
 	private void MoveLeft()
 	{
 		transform.Translate( Vector3.left * Step * Time.deltaTime );
 	}
 
+	// Movimiento hacia la derecha
 	private void MoveRight()
 	{
         transform.Translate( Vector3.right * Step * Time.deltaTime );
 	}
 
+	// Salto
 	private void Jump()
 	{
         if( !IsInAir )
@@ -61,11 +67,13 @@ public class PlayerMove : MonoBehaviour {
 		}
 	}
 
+	// Salto producido por caer sobre un enemigo
 	private void BounceOnEnemy()
 	{
 		MyRigidBody.AddForce(Vector3.up * EnemyJumpForce, ForceMode2D.Force);
 	}
 
+	// Deteccion de colision
 	void OnCollisionEnter2D(Collision2D other)
 	{
 
@@ -78,9 +86,10 @@ public class PlayerMove : MonoBehaviour {
 
 		if( other.transform.tag.Equals("Enemy") )
 		{
-			if( other.contacts[0].point.y == other.contacts[1].point.y )
+			if( other.contacts[0].point.y.ToString("0.0") == other.contacts[1].point.y.ToString("0.0") )
 			{
 				BounceOnEnemy();
+				Destroy( other.gameObject );
 			}
 			else
 			{

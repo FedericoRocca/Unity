@@ -39,4 +39,19 @@ public class EnemyMove : MonoBehaviour {
 		}
 	}
 
+	public void SetMovingLeft(bool Change)
+	{
+		isMovingLeft = Change;
+	}
+
+	public void SetSpeedofChase()
+	{
+		Step = Step * 2;
+	}
+
+	public void SetSpeedOfPatrol()
+	{
+		Step = Step / 2;
+	}
+
 }
