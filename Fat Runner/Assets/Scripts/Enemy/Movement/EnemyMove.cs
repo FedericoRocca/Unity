@@ -6,6 +6,9 @@ public class EnemyMove : MonoBehaviour {
 
 	// Variables para uso externo
 	public int Step;
+	public bool IsFlying;
+	public float Leftstep = 0;
+	public float VerticalStep = 0;
 
 	// Variables para uso del script
 	private bool isMovingLeft;
@@ -20,7 +23,14 @@ public class EnemyMove : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
 
-        if( isMovingLeft )
+		if( IsFlying )
+		{
+			transform.Translate( Vector2.up * Mathf.Sin(Time.timeSinceLevelLoad) * VerticalStep * Time.deltaTime );
+			transform.Translate( Vector2.left * Leftstep * Time.deltaTime );
+		}
+		else
+		{
+			if( isMovingLeft )
 		{
 			transform.Translate( Vector2.left * Step * Time.deltaTime );
 		}
@@ -28,6 +38,8 @@ public class EnemyMove : MonoBehaviour {
 		{
 			transform.Translate( Vector2.right * Step * Time.deltaTime );
 		}
+		}
+        
 
 	}
 
