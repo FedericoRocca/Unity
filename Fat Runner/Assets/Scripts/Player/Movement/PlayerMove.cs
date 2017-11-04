@@ -11,6 +11,7 @@ public class PlayerMove : MonoBehaviour {
 
 	// Variables para uso del script
 	private Rigidbody2D MyRigidBody;
+	private BoxCollider2D MyCollider;
 	private bool IsInAir;
 
 	// Use this for initialization
@@ -20,6 +21,9 @@ public class PlayerMove : MonoBehaviour {
 
 		// Se restrinje el salto en el primer frame, evitando un salto en el aire
 		IsInAir = true;
+
+		// Obtengo el collider
+		MyCollider = transform.GetComponent<BoxCollider2D>();
 	}
 	
 	// Update is called once per frame
@@ -78,7 +82,6 @@ public class PlayerMove : MonoBehaviour {
 	{
 
 		//* Al momento de colisionar, está cambiando la posicion de y, por ende está matando al jugador incorrectamente */
-		
 		if( other.transform.tag.Equals("Floor") )
 		{
 			IsInAir = false;
@@ -86,15 +89,20 @@ public class PlayerMove : MonoBehaviour {
 
 		if( other.transform.tag.Equals("Enemy") )
 		{
-			if( other.contacts[0].point.y.ToString("0.0") == other.contacts[1].point.y.ToString("0.0") )
+
+			RaycastHit2D Left = Physics2D.Linecast( new Vector3( transform.position.x - ( MyCollider.size.x / 2 + 0.2f) , transform.position.y, 0),  transform.position + (Vector3.down * 3));
+			RaycastHit2D Right = Physics2D.Linecast( new Vector3( transform.position.x + ( MyCollider.size.x / 2 - 0.2f) , transform.position.y, 0),  transform.position + (Vector3.down * 3));
+			RaycastHit2D Center = Physics2D.Linecast( transform.position,  transform.position + (Vector3.down * 3));
+			
+			if( Left.transform.tag.Equals("Enemy") || Right.transform.tag.Equals("Enemy") || Center.transform.tag.Equals("Enemy") )
 			{
-				BounceOnEnemy();
-				Destroy( other.gameObject );
+				Destroy(other.gameObject);
 			}
 			else
 			{
-				Destroy( this.gameObject );
+				Destroy(this.gameObject);
 			}
+			
 		}
 
 	}
