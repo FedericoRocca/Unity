@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 61561068831082258}
   - component: {fileID: 114306444749883794}
   m_Layer: 0
-  m_Name: Floor
+  m_Name: BouncerEnemySprite
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
