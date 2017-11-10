@@ -45,7 +45,7 @@ public class EnemyMove : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D other)
 	{
-		if( !other.transform.tag.Equals("Player") && !other.transform.tag.Equals("Floor") )
+		if( !other.transform.tag.Equals("Player") && other.transform.tag.Equals("Wall") )
 		{
 			isMovingLeft = !isMovingLeft;
 		}

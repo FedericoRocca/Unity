@@ -52,21 +52,13 @@ public class PlayerMove : MonoBehaviour {
 	// Movimiento hacia la izquierda
 	private void MoveLeft()
 	{
-		if( !IsInAir )
-		{
-			//transform.Translate( Vector3.left * Step * Time.deltaTime );
-			MyRigidBody.velocity = new Vector2( -1 * Step ,0);
-		}
+			MyRigidBody.velocity = new Vector2( -1 * Step , MyRigidBody.velocity.y);
 	}
 
 	// Movimiento hacia la derecha
 	private void MoveRight()
 	{
-        if( !IsInAir )
-		{
-				//MyRigidBody.AddForce( Vector2.right * Step * Time.deltaTime, ForceMode2D.Impulse );
-				MyRigidBody.velocity = new Vector2( 1 * Step ,0);
-		}
+				MyRigidBody.velocity = new Vector2( 1 * Step , MyRigidBody.velocity.y);
 	}
 
 	// Salto
@@ -75,7 +67,7 @@ public class PlayerMove : MonoBehaviour {
         if( !IsInAir )
 		{
 			MyRigidBody.AddForce(Vector3.up * JumpForce, ForceMode2D.Force);
-			IsInAir = true;
+			IsInAir = !IsInAir;
 		}
 	}
 
@@ -90,12 +82,11 @@ public class PlayerMove : MonoBehaviour {
 	{
 
 		// Si colisiono contra un GO tageado como "Floor" reseteo la variable de salto
-		if( other.transform.tag.Equals("Floor") )
+		if( other.transform.tag.Equals("Floor") || other.transform.tag.Equals("Wall"))
 		{
-			IsInAir = false;
+			IsInAir = !IsInAir;
 		}
 
-		// Si colisiono contra un GO tageado como "Enemy" casteo 3 raycast para saber si colisione con el enemigo desde arriba
 		// FIXME
 		if( other.transform.tag.Equals("Enemy") )
 		{
