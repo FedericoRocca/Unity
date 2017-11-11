@@ -5,9 +5,9 @@ using UnityEngine;
 public class PlayerMove : MonoBehaviour {
 	
 	//Variables para uso externo
-	public int Step;
-	public int JumpForce;
-	public int EnemyJumpForce;
+	public int Step; // Velocidad horizontal
+	public int JumpForce;  // Fuerza de salto
+	public int EnemyJumpForce; // Fuerza de salto al rebotar en un enemigo
 
 	// Variables para uso del script
 	private Rigidbody2D MyRigidBody;
@@ -31,20 +31,29 @@ public class PlayerMove : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
 
-		// Movimiento izquierda
-		if( Input.GetKey( KeyCode.LeftArrow ) )
-		{
-			MoveLeft();
-		}
+        if(Camera.main.WorldToViewportPoint(MyRigidBody.transform.position).x >= 0.05f)
+        {
+            // Movimiento izquierda
+            if (Input.GetKey(KeyCode.LeftArrow))
+            {
+                MoveLeft();
+            }
 
-		// Movimiento derecha
-		if( Input.GetKey( KeyCode.RightArrow ) )
-		{
-			MoveRight();
-		}
+        }
+        else
+        {
+            MyRigidBody.velocity = new Vector2(-0 * Step, MyRigidBody.velocity.y);
+        }
 
-		// Salto
-		if( Input.GetKey( KeyCode.UpArrow ) )
+        // Movimiento derecha
+        if (Input.GetKey(KeyCode.RightArrow))
+        {
+            MoveRight();
+        }
+
+
+        // Salto
+        if ( Input.GetKey( KeyCode.UpArrow ) )
 		{
 			Jump();
 		}
@@ -54,21 +63,20 @@ public class PlayerMove : MonoBehaviour {
 	// Movimiento hacia la izquierda
 	private void MoveLeft()
 	{
-			MyRigidBody.velocity = new Vector2( -1 * Step , MyRigidBody.velocity.y);
+            MyRigidBody.velocity = new Vector2(-1 * Step, MyRigidBody.velocity.y);
 	}
 
 	// Movimiento hacia la derecha
 	private void MoveRight()
 	{
-				MyRigidBody.velocity = new Vector2( 1 * Step , MyRigidBody.velocity.y);
-	}
+            MyRigidBody.velocity = new Vector2(1 * Step, MyRigidBody.velocity.y);
+    }
 
 	// Salto
 	private void Jump()
 	{
         if( !IsInAir )
 		{
-			Debug.Log("jump");
 			MyRigidBody.AddForce(Vector3.up * JumpForce, ForceMode2D.Force);
 			IsInAir = !IsInAir;
 		}
@@ -89,14 +97,6 @@ public class PlayerMove : MonoBehaviour {
 			IsInAir = false;
 		}
 
-		// Si colisiono contra un GO tageado como "Floor" reseteo la variable de salto
-		/*if()
-		{
-			IsInAir = !IsInAir;
-			
-		}*/
-
-		// FIXME
 		if( other.transform.tag.Equals("Enemy") )
 		{
 
@@ -107,6 +107,7 @@ public class PlayerMove : MonoBehaviour {
 			Vector3 Origin;
 			Vector3 Destination;
 
+            // Genero raycasts hacia abajo, para validar la colision con enemigos desde arriba
 			// Left
 			Origin = new Vector3( MyCollider.bounds.center.x - MyCollider.size.x / 4 + 0.1f, MyCollider.bounds.center.y, 0 );
 			Destination = new Vector3( MyCollider.bounds.center.x - MyCollider.size.x / 4 + 0.1f, MyCollider.bounds.center.y - MyCollider.size.y / 4 - 0.1f, 0 );
