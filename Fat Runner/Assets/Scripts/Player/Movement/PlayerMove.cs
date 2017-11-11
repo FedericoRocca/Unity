@@ -11,8 +11,10 @@ public class PlayerMove : MonoBehaviour {
 
 	// Variables para uso del script
 	private Rigidbody2D MyRigidBody;
-	private BoxCollider2D MyCollider;
+	private CapsuleCollider2D MyCollider;
 	private bool IsInAir;
+
+	public GameObject pies;
 
 	// Use this for initialization
 	void Start () {
@@ -23,26 +25,26 @@ public class PlayerMove : MonoBehaviour {
 		IsInAir = true;
 
 		// Obtengo el collider
-		MyCollider = transform.GetComponent<BoxCollider2D>();
+		MyCollider = transform.GetComponent<CapsuleCollider2D>();
 	}
 	
 	// Update is called once per frame
 	void FixedUpdate () {
 
 		// Movimiento izquierda
-		if( Input.GetKey( KeyCode.A ) || Input.GetKey( KeyCode.LeftArrow ) )
+		if( Input.GetKey( KeyCode.LeftArrow ) )
 		{
 			MoveLeft();
 		}
 
 		// Movimiento derecha
-		if( Input.GetKey( KeyCode.D ) || Input.GetKey( KeyCode.RightArrow ) )
+		if( Input.GetKey( KeyCode.RightArrow ) )
 		{
 			MoveRight();
 		}
 
 		// Salto
-		if( Input.GetKeyDown( KeyCode.Space ) || Input.GetKey( KeyCode.UpArrow ) )
+		if( Input.GetKey( KeyCode.UpArrow ) )
 		{
 			Jump();
 		}
@@ -66,6 +68,7 @@ public class PlayerMove : MonoBehaviour {
 	{
         if( !IsInAir )
 		{
+			Debug.Log("jump");
 			MyRigidBody.AddForce(Vector3.up * JumpForce, ForceMode2D.Force);
 			IsInAir = !IsInAir;
 		}
@@ -80,21 +83,45 @@ public class PlayerMove : MonoBehaviour {
 	// Deteccion de colision
 	void OnCollisionEnter2D(Collision2D other)
 	{
+		Collider2D colHitting = Physics2D.OverlapCircle(pies.transform.position, 0.05f);
+		if (colHitting != null && (colHitting.transform.tag.Equals("Floor")  || colHitting.transform.tag.Equals("Wall")))
+		{
+			IsInAir = false;
+		}
 
 		// Si colisiono contra un GO tageado como "Floor" reseteo la variable de salto
-		if( other.transform.tag.Equals("Floor") || other.transform.tag.Equals("Wall"))
+		/*if()
 		{
 			IsInAir = !IsInAir;
-		}
+			
+		}*/
 
 		// FIXME
 		if( other.transform.tag.Equals("Enemy") )
 		{
 
-			RaycastHit2D Left = Physics2D.Linecast( new Vector3( transform.position.x - ( MyCollider.size.x / 2 + 0.2f) , transform.position.y, 0),  transform.position + (Vector3.down * 3));
-			RaycastHit2D Right = Physics2D.Linecast( new Vector3( transform.position.x + ( MyCollider.size.x / 2 - 0.2f) , transform.position.y, 0),  transform.position + (Vector3.down * 3));
-			RaycastHit2D Center = Physics2D.Linecast( transform.position,  transform.position + (Vector3.down * 3));
+			RaycastHit2D Left;
+			RaycastHit2D Right;
+			RaycastHit2D Center;
+	
+			Vector3 Origin;
+			Vector3 Destination;
+
+			// Left
+			Origin = new Vector3( MyCollider.bounds.center.x - MyCollider.size.x / 4 + 0.1f, MyCollider.bounds.center.y, 0 );
+			Destination = new Vector3( MyCollider.bounds.center.x - MyCollider.size.x / 4 + 0.1f, MyCollider.bounds.center.y - MyCollider.size.y / 4 - 0.1f, 0 );
+			Left = Physics2D.Linecast( Origin, Destination );
 			
+			// Center
+			Origin = new Vector3( MyCollider.bounds.center.x , MyCollider.bounds.center.y );
+			Destination = new Vector3( MyCollider.bounds.center.x , MyCollider.bounds.center.y - MyCollider.size.y / 4 - 0.1f, 0 );
+			Right = Physics2D.Linecast( Origin, Destination );
+			
+			// Right
+			Origin = new Vector3( MyCollider.bounds.center.x + MyCollider.size.x / 4 - 0.1f, MyCollider.bounds.center.y, 0 );
+			Destination = new Vector3( MyCollider.bounds.center.x + MyCollider.size.x / 4 - 0.1f, MyCollider.bounds.center.y - MyCollider.size.y / 4 - 0.1f, 0 );
+			Center = Physics2D.Linecast( Origin, Destination );
+
 			if( Left.transform.tag.Equals("Enemy") || Right.transform.tag.Equals("Enemy") || Center.transform.tag.Equals("Enemy") )
 			{
 				Destroy(other.gameObject);

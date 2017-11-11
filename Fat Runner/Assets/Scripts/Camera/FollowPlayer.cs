@@ -13,6 +13,12 @@ public class FollowPlayer : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-		Camera.main.transform.position = new Vector3( PlayerPosition.transform.position.x, 0, -10 );
+		if( PlayerPosition != null )
+		{
+			if( Camera.main.WorldToViewportPoint( PlayerPosition.position ).x >= 0.5f )
+			{
+				Camera.main.transform.position = new Vector3( PlayerPosition.transform.position.x, 0, -10 );
+			}
+		}
 	}
 }
