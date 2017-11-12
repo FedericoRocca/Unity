@@ -13,8 +13,10 @@ public class PlayerMove : MonoBehaviour {
 	private Rigidbody2D MyRigidBody;
 	private CapsuleCollider2D MyCollider;
 	private bool IsInAir;
+    private bool IsFacingRight = true;
 
-	public GameObject pies;
+
+    public GameObject pies;
 
 	// Use this for initialization
 	void Start () {
@@ -36,18 +38,27 @@ public class PlayerMove : MonoBehaviour {
             // Movimiento izquierda
             if (Input.GetKey(KeyCode.LeftArrow))
             {
+                if( IsFacingRight )
+                {
+                    transform.Rotate(Vector3.up * 180);
+                }
+                
                 MoveLeft();
             }
 
         }
         else
         {
-            MyRigidBody.velocity = new Vector2(-0 * Step, MyRigidBody.velocity.y);
+            MyRigidBody.velocity = new Vector2(0 * Step, MyRigidBody.velocity.y);
         }
 
         // Movimiento derecha
         if (Input.GetKey(KeyCode.RightArrow))
         {
+            if( !IsFacingRight )
+            {
+                transform.Rotate(Vector3.up * 180);
+            }
             MoveRight();
         }
 
@@ -63,13 +74,15 @@ public class PlayerMove : MonoBehaviour {
 	// Movimiento hacia la izquierda
 	private void MoveLeft()
 	{
-            MyRigidBody.velocity = new Vector2(-1 * Step, MyRigidBody.velocity.y);
+        MyRigidBody.velocity = new Vector2(-1 * Step, MyRigidBody.velocity.y);
+        IsFacingRight = false;
 	}
 
 	// Movimiento hacia la derecha
 	private void MoveRight()
 	{
-            MyRigidBody.velocity = new Vector2(1 * Step, MyRigidBody.velocity.y);
+        MyRigidBody.velocity = new Vector2(1 * Step, MyRigidBody.velocity.y);
+        IsFacingRight = true;
     }
 
 	// Salto
