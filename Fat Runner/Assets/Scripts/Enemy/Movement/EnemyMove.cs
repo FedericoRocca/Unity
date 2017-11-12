@@ -11,14 +11,14 @@ public class EnemyMove : MonoBehaviour {
 	public float VerticalStep = 0;
 
 	// Variables para uso del script
-	private bool isMovingLeft;
+	public bool isMovingLeft;
 
     // Use this for initialization
     void Start () {
-		
-		isMovingLeft = true;
 
-	}
+        isMovingLeft = true;
+
+    }
 	
 	// Update is called once per frame
 	void FixedUpdate () {
@@ -31,13 +31,13 @@ public class EnemyMove : MonoBehaviour {
 		else
 		{
 			if( isMovingLeft )
-		{
-			transform.Translate( Vector2.left * Step * Time.deltaTime );
-		}
-		else
-		{
-			transform.Translate( Vector2.right * Step * Time.deltaTime );
-		}
+		    {
+			    transform.Translate( Vector2.left * Step * Time.deltaTime );
+		    }
+		    else
+		    {
+			    transform.Translate( Vector2.right * Step * Time.deltaTime );
+		    }
 		}
         
 
@@ -45,10 +45,19 @@ public class EnemyMove : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D other)
 	{
-		if( !other.transform.tag.Equals("Player") && other.transform.tag.Equals("Wall") )
+		if( other.transform.tag.Equals("Wall") )
 		{
-			isMovingLeft = !isMovingLeft;
-		}
+            if( isMovingLeft )
+            {
+                Debug.Log("isMovingLeft = false;");
+                isMovingLeft = false;
+            }
+            else
+            {
+                Debug.Log("isMovingLeft = true;");
+                isMovingLeft = true;
+            }
+        }
 	}
 
 	public void SetMovingLeft(bool Change)

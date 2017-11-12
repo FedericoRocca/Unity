@@ -14,6 +14,7 @@ public class PlayerMove : MonoBehaviour {
 	private CapsuleCollider2D MyCollider;
 	private bool IsInAir;
     private bool IsFacingRight = true;
+    private AudioSource MyAudioSource;
 
 
     public GameObject pies;
@@ -28,6 +29,9 @@ public class PlayerMove : MonoBehaviour {
 
 		// Obtengo el collider
 		MyCollider = transform.GetComponent<CapsuleCollider2D>();
+
+        // Obtengo el AudioSource
+        MyAudioSource = GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
@@ -90,6 +94,7 @@ public class PlayerMove : MonoBehaviour {
 	{
         if( !IsInAir )
 		{
+            MyAudioSource.Play();
 			MyRigidBody.AddForce(Vector3.up * JumpForce, ForceMode2D.Force);
 			IsInAir = !IsInAir;
 		}
@@ -98,7 +103,8 @@ public class PlayerMove : MonoBehaviour {
 	// Salto producido por caer sobre un enemigo
 	private void BounceOnEnemy()
 	{
-		MyRigidBody.AddForce(Vector3.up * EnemyJumpForce, ForceMode2D.Force);
+        MyAudioSource.Play();
+        MyRigidBody.AddForce(Vector3.up * EnemyJumpForce, ForceMode2D.Force);
 	}
 
 	// Deteccion de colision
@@ -138,6 +144,7 @@ public class PlayerMove : MonoBehaviour {
 
 			if( Left.transform.tag.Equals("Enemy") || Right.transform.tag.Equals("Enemy") || Center.transform.tag.Equals("Enemy") )
 			{
+                BounceOnEnemy();
 				Destroy(other.gameObject);
 			}
 			else

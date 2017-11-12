@@ -6,3 +6,6 @@ https://kenney.nl/
 
 Background
 https://opengameart.org/content/parallax-2d-backgrounds
+
+Sonidos
+http://sfbgames.com/chiptone/
