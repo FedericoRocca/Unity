@@ -12,6 +12,7 @@ public class EnemyMove : MonoBehaviour {
 
 	// Variables para uso del script
 	public bool isMovingLeft;
+    private bool ProcessCollision = true;
 
     // Use this for initialization
     void Start () {
@@ -25,8 +26,16 @@ public class EnemyMove : MonoBehaviour {
 
 		if( IsFlying )
 		{
-			transform.Translate( Vector2.up * Mathf.Sin(Time.timeSinceLevelLoad) * VerticalStep * Time.deltaTime );
-			transform.Translate( Vector2.left * Leftstep * Time.deltaTime );
+			if( isMovingLeft )
+            {
+                transform.Translate(Vector2.up * Mathf.Sin(Time.timeSinceLevelLoad) * VerticalStep * Time.deltaTime);
+                transform.Translate(Vector2.left * Leftstep * Time.deltaTime);
+            }
+            else
+            {
+                transform.Translate(Vector2.up * Mathf.Sin(Time.timeSinceLevelLoad) * VerticalStep * Time.deltaTime);
+                transform.Translate(Vector2.right * Leftstep * Time.deltaTime);
+            }
 		}
 		else
 		{
@@ -45,22 +54,31 @@ public class EnemyMove : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D other)
 	{
-		if( other.transform.tag.Equals("Wall") )
-		{
-            if( isMovingLeft )
+        if( ProcessCollision )
+        {
+            if (other.transform.tag.Equals("Wall"))
             {
-                Debug.Log("isMovingLeft = false;");
-                isMovingLeft = false;
+                if (isMovingLeft)
+                {
+                    Debug.Log("isMovingLeft = false;");
+                    isMovingLeft = false;
+                }
+                else
+                {
+                    Debug.Log("isMovingLeft = true;");
+                    isMovingLeft = true;
+                }
             }
-            else
-            {
-                Debug.Log("isMovingLeft = true;");
-                isMovingLeft = true;
-            }
+            ProcessCollision = false;
         }
-	}
+    }
 
-	public void SetMovingLeft(bool Change)
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        ProcessCollision = true;
+    }
+
+    public void SetMovingLeft(bool Change)
 	{
 		isMovingLeft = Change;
 	}
