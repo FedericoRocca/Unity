@@ -6,6 +6,13 @@ public class OutWorldDestroyer : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Destroy( other.gameObject );
+        if (other.gameObject.tag.Equals("Player"))
+        {
+            other.gameObject.GetComponent<PlayerMove>().DestroyPlayer();
+        }
+        else
+        {
+            Destroy(other.gameObject);
+        }
     }
 }

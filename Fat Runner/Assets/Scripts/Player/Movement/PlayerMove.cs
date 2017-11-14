@@ -14,13 +14,19 @@ public class PlayerMove : MonoBehaviour {
 	private CapsuleCollider2D MyCollider;
 	private bool IsInAir;
     private bool IsFacingRight = true;
-    private AudioSource MyAudioSource;
-
+    public AudioSource JumpSound;
+    public AudioSource DeathSound;
 
     public GameObject pies;
 
-	// Use this for initialization
-	void Start () {
+    public void DestroyPlayer()
+    {
+        AudioSource.PlayClipAtPoint(DeathSound.clip, Camera.main.transform.position, DeathSound.volume);
+        Destroy(this.gameObject, 2.0f);
+    }
+
+    // Use this for initialization
+    void Start () {
 		// Obtengo el rigidbody, para poder agregarle fuerza y demas
 		MyRigidBody = transform.GetComponent<Rigidbody2D>();
 
@@ -30,8 +36,6 @@ public class PlayerMove : MonoBehaviour {
 		// Obtengo el collider
 		MyCollider = transform.GetComponent<CapsuleCollider2D>();
 
-        // Obtengo el AudioSource
-        MyAudioSource = GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
@@ -94,7 +98,7 @@ public class PlayerMove : MonoBehaviour {
 	{
         if( !IsInAir )
 		{
-            MyAudioSource.Play();
+            JumpSound.Play();
 			MyRigidBody.AddForce(Vector3.up * JumpForce, ForceMode2D.Force);
 			IsInAir = !IsInAir;
 		}
@@ -103,7 +107,7 @@ public class PlayerMove : MonoBehaviour {
 	// Salto producido por caer sobre un enemigo
 	private void BounceOnEnemy()
 	{
-        MyAudioSource.Play();
+        JumpSound.Play();
         MyRigidBody.AddForce(Vector3.up * EnemyJumpForce, ForceMode2D.Force);
 	}
 
@@ -149,7 +153,7 @@ public class PlayerMove : MonoBehaviour {
 			}
 			else
 			{
-				Destroy(this.gameObject);
+                DestroyPlayer();
 			}
 			
 		}

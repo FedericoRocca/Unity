@@ -60,12 +60,10 @@ public class EnemyMove : MonoBehaviour {
             {
                 if (isMovingLeft)
                 {
-                    Debug.Log("isMovingLeft = false;");
                     isMovingLeft = false;
                 }
                 else
                 {
-                    Debug.Log("isMovingLeft = true;");
                     isMovingLeft = true;
                 }
             }
