@@ -1,0 +1,91 @@
+Initialize engine version: 2017.1.0f3 (472613c02cf7)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 10.1]
+    Renderer: Intel(R) HD Graphics (ID=0x106)
+    Vendor:   Intel
+    VRAM:     848 MB
+    Driver:   9.17.10.4459
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\frocc\Unity\Fat Runner\Build\FatRunner_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\frocc\Unity\Fat Runner\Build\FatRunner_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\frocc\Unity\Fat Runner\Build\FatRunner_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\frocc\Unity\Fat Runner\Build\FatRunner_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\frocc\Unity\Fat Runner\Build\FatRunner_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\frocc\Unity\Fat Runner\Build\FatRunner_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\frocc\Unity\Fat Runner\Build\FatRunner_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\frocc\Unity\Fat Runner\Build\FatRunner_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\frocc\Unity\Fat Runner\Build\FatRunner_Data\Managed\UnityEngine.Timeline.dll (this message is harmless)
+Loading C:\Users\frocc\Unity\Fat Runner\Build\FatRunner_Data\Managed\UnityEngine.Timeline.dll into Unity Child Domain
+Platform assembly: C:\Users\frocc\Unity\Fat Runner\Build\FatRunner_Data\Managed\TextMeshPro-1.0.55.2017.1.0b12.dll (this message is harmless)
+Loading C:\Users\frocc\Unity\Fat Runner\Build\FatRunner_Data\Managed\TextMeshPro-1.0.55.2017.1.0b12.dll into Unity Child Domain
+Platform assembly: C:\Users\frocc\Unity\Fat Runner\Build\FatRunner_Data\Managed\System.dll (this message is harmless)
+Platform assembly: C:\Users\frocc\Unity\Fat Runner\Build\FatRunner_Data\Managed\System.Core.dll (this message is harmless)
+- Completed reload, in  0.089 seconds
+<RI> Initializing input.
+XInput1_3.dll not found. Trying XInput9_1_0.dll instead...
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 2.147150 ms
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 8.379916 ms
+
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 352.
+Total: 0.267271 ms (FindLiveObjects: 0.029934 ms CreateObjectMapping: 0.015822 ms MarkObjects: 0.205264 ms  DeleteObjects: 0.015394 ms)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.370758 ms
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 374.
+Total: 0.279245 ms (FindLiveObjects: 0.037204 ms CreateObjectMapping: 0.018388 ms MarkObjects: 0.206974 ms  DeleteObjects: 0.015822 ms)
+
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.409245 ms
+
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 577.
+Total: 1.201651 ms (FindLiveObjects: 0.034638 ms CreateObjectMapping: 0.027368 ms MarkObjects: 0.582437 ms  DeleteObjects: 0.556351 ms)
+
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.404777 ms
+
+Unloading 61 unused Assets to reduce memory usage. Loaded Objects now: 363.
+Total: 0.886485 ms (FindLiveObjects: 0.024802 ms CreateObjectMapping: 0.029079 ms MarkObjects: 0.269837 ms  DeleteObjects: 0.562338 ms)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.725694 ms
+
+Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 386.
+Total: 0.787701 ms (FindLiveObjects: 0.062006 ms CreateObjectMapping: 0.044046 ms MarkObjects: 0.285659 ms  DeleteObjects: 0.394706 ms)
+
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.522568 ms
+
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 577.
+Total: 1.264941 ms (FindLiveObjects: 0.047039 ms CreateObjectMapping: 0.017960 ms MarkObjects: 0.617075 ms  DeleteObjects: 0.581582 ms)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.947209 ms
+
+Unloading 61 unused Assets to reduce memory usage. Loaded Objects now: 363.
+Total: 0.946354 ms (FindLiveObjects: 0.025658 ms CreateObjectMapping: 0.027796 ms MarkObjects: 0.285659 ms  DeleteObjects: 0.606812 ms)
+
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.461844 ms
+
+Unloading 6 unused Assets to reduce memory usage. Loaded Objects now: 577.
+Total: 1.035302 ms (FindLiveObjects: 0.048322 ms CreateObjectMapping: 0.017532 ms MarkObjects: 0.617075 ms  DeleteObjects: 0.351942 ms)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.901024 ms
+
+Unloading 61 unused Assets to reduce memory usage. Loaded Objects now: 363.
+Total: 0.892044 ms (FindLiveObjects: 0.025230 ms CreateObjectMapping: 0.029079 ms MarkObjects: 0.288652 ms  DeleteObjects: 0.548226 ms)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.372469 ms
+
+Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 386.
+Total: 0.573884 ms (FindLiveObjects: 0.044046 ms CreateObjectMapping: 0.016250 ms MarkObjects: 0.286942 ms  DeleteObjects: 0.226218 ms)
+
+Setting up 1 worker threads for Enlighten.
+  Thread -> id: 142c -> priority: 1 

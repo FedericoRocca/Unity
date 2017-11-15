@@ -1,11 +1,13 @@
 Musica
 https://opengameart.org/content/platformer-game-music-pack
+https://opengameart.org/content/game-over-0
 
 Sprites
 https://kenney.nl/
 
 Background
 https://opengameart.org/content/parallax-2d-backgrounds
+https://opengameart.org/content/falling-0
 
 Sonidos
 http://sfbgames.com/chiptone/
