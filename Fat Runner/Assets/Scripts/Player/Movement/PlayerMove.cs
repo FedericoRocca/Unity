@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMove : MonoBehaviour {
 	
@@ -16,13 +17,33 @@ public class PlayerMove : MonoBehaviour {
     private bool IsFacingRight = true;
     public AudioSource JumpSound;
     public AudioSource DeathSound;
+	private bool IsDead = false;
+	private float DeadTime;
 
     public GameObject pies;
+
+	public bool IsAlive()
+	{
+		if( DeadTime <= 0 )
+		{
+			return false;
+		} else return true;
+	}
 
     public void DestroyPlayer()
     {
         AudioSource.PlayClipAtPoint(DeathSound.clip, Camera.main.transform.position, DeathSound.volume);
-        Destroy(this.gameObject, 2.0f);
+		IsDead = true;
+		SpriteRenderer[] Renderers;
+		Renderers = gameObject.GetComponentsInChildren<SpriteRenderer>();
+
+		for( int i = 0; i < Renderers.Length; i++ )
+		{
+			Renderers[i].enabled = false;
+		}
+
+		gameObject.GetComponent<CapsuleCollider2D>().enabled = false;
+
     }
 
     // Use this for initialization
@@ -30,15 +51,21 @@ public class PlayerMove : MonoBehaviour {
 		// Obtengo el rigidbody, para poder agregarle fuerza y demas
 		MyRigidBody = transform.GetComponent<Rigidbody2D>();
 
-		// Se restrinje el salto en el primer frame, evitando un salto en el aire
-		IsInAir = true;
-
 		// Obtengo el collider
 		MyCollider = transform.GetComponent<CapsuleCollider2D>();
 
+		DeadTime = 2.0f;
 	}
 	
 	// Update is called once per frame
+	void Update()
+	{
+		if( IsDead == true )
+		{
+			DeadTime -= Time.deltaTime;
+		}
+	}
+
 	void FixedUpdate () {
 
         if(Camera.main.WorldToViewportPoint(MyRigidBody.transform.position).x >= 0.05f)
@@ -70,8 +97,7 @@ public class PlayerMove : MonoBehaviour {
             MoveRight();
         }
 
-
-        // Salto
+		// Salto
         if ( Input.GetKey( KeyCode.UpArrow ) )
 		{
 			Jump();
@@ -115,7 +141,9 @@ public class PlayerMove : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D other)
 	{
 		Collider2D colHitting = Physics2D.OverlapCircle(pies.transform.position, 0.05f);
-		if (colHitting != null && (colHitting.transform.tag.Equals("Floor")  || colHitting.transform.tag.Equals("Wall")))
+		if (colHitting != null && (colHitting.transform.tag.Equals("Enemy") || 
+									colHitting.transform.tag.Equals("Floor")  || 
+									colHitting.transform.tag.Equals("Wall")))
 		{
 			IsInAir = false;
 		}
@@ -146,15 +174,37 @@ public class PlayerMove : MonoBehaviour {
 			Destination = new Vector3( MyCollider.bounds.center.x + MyCollider.size.x / 4 - 0.1f, MyCollider.bounds.center.y - MyCollider.size.y / 4 - 0.1f, 0 );
 			Center = Physics2D.Linecast( Origin, Destination );
 
-			if( Left.transform.tag.Equals("Enemy") || Right.transform.tag.Equals("Enemy") || Center.transform.tag.Equals("Enemy") )
+			if( Left.transform != null )
 			{
-                BounceOnEnemy();
-				Destroy(other.gameObject);
+				if( Left.transform.tag.Equals("Enemy") )
+				{
+					BounceOnEnemy();
+					Destroy(other.gameObject);
+					return;
+				}
 			}
-			else
+
+			if( Right.transform != null )
 			{
+				if( Right.transform.tag.Equals("Enemy") )
+				{
+					BounceOnEnemy();
+					Destroy(other.gameObject);
+					return;
+				}
+			}
+
+			if( Center.transform != null )
+			{
+				if( Center.transform.tag.Equals("Enemy") )
+				{
+					BounceOnEnemy();
+					Destroy(other.gameObject);
+					return;
+				}
+			}
+
                 DestroyPlayer();
-			}
 			
 		}
 
