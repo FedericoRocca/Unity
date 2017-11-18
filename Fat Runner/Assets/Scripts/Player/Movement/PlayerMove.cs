@@ -17,7 +17,7 @@ public class PlayerMove : MonoBehaviour {
     private bool IsFacingRight = true;
     public AudioSource JumpSound;
     public AudioSource DeathSound;
-	private bool IsDead = false;
+	protected bool IsDead = false;
 	private float DeadTime;
 
     public GameObject pies;
@@ -32,17 +32,20 @@ public class PlayerMove : MonoBehaviour {
 
     public void DestroyPlayer()
     {
-        AudioSource.PlayClipAtPoint(DeathSound.clip, Camera.main.transform.position, DeathSound.volume);
-		IsDead = true;
-		SpriteRenderer[] Renderers;
-		Renderers = gameObject.GetComponentsInChildren<SpriteRenderer>();
-
-		for( int i = 0; i < Renderers.Length; i++ )
+        if( !IsDead )
 		{
-			Renderers[i].enabled = false;
-		}
+			AudioSource.PlayClipAtPoint(DeathSound.clip, Camera.main.transform.position, DeathSound.volume);
+			IsDead = true;
+			SpriteRenderer[] Renderers;
+			Renderers = gameObject.GetComponentsInChildren<SpriteRenderer>();
 
-		gameObject.GetComponent<CapsuleCollider2D>().enabled = false;
+			for( int i = 0; i < Renderers.Length; i++ )
+			{
+				Renderers[i].enabled = false;
+			}
+
+			gameObject.GetComponent<CapsuleCollider2D>().enabled = false;
+		}
 
     }
 
@@ -122,7 +125,7 @@ public class PlayerMove : MonoBehaviour {
 	// Salto
 	private void Jump()
 	{
-        if( !IsInAir )
+        if( !IsInAir && MyRigidBody.velocity.y <= 0 )
 		{
             JumpSound.Play();
 			MyRigidBody.AddForce(Vector3.up * JumpForce, ForceMode2D.Force);

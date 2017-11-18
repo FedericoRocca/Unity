@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 70050812387411454}
   - component: {fileID: 82408600896654388}
   - component: {fileID: 82027387506513156}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4476747197693160}
   - component: {fileID: 212673056221263296}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RightArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56,7 +56,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4989540339949086}
   - component: {fileID: 212098366059744010}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LeftArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,7 +72,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4604356127223568}
   - component: {fileID: 212207130117417102}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RightLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88,8 +88,24 @@ GameObject:
   m_Component:
   - component: {fileID: 4037090861959926}
   - component: {fileID: 212854649741469962}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Head
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1696506149786968
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4723570616509136}
+  - component: {fileID: 114855173658298678}
+  m_Layer: 8
+  m_Name: StaminaManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -104,7 +120,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4043768133239920}
   - component: {fileID: 212248505048276394}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LeftLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -119,7 +135,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4051379295023128}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Pies
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -135,7 +151,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4936135713584246}
   - component: {fileID: 212540193958021700}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -162,7 +178,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1053742024675596}
   m_LocalRotation: {x: 0.008726558, y: 0, z: 0, w: 0.999962}
-  m_LocalPosition: {x: -7.59, y: -2.6, z: -0.01}
+  m_LocalPosition: {x: 84.7, y: 6, z: 0.1}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 4037090861959926}
@@ -172,6 +188,7 @@ Transform:
   - {fileID: 4043768133239920}
   - {fileID: 4604356127223568}
   - {fileID: 4051379295023128}
+  - {fileID: 4723570616509136}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 1, y: 0, z: 0}
@@ -227,6 +244,19 @@ Transform:
   m_Father: {fileID: 4043087605215296}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4723570616509136
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1696506149786968}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4043087605215296}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4936135713584246
 Transform:
   m_ObjectHideFlags: 1
@@ -264,7 +294,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 2
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 8
@@ -460,11 +490,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Step: 7
-  JumpForce: 1000
+  JumpForce: 1100
   EnemyJumpForce: 750
   JumpSound: {fileID: 82408600896654388}
   DeathSound: {fileID: 82027387506513156}
   pies: {fileID: 1797014997670308}
+--- !u!114 &114855173658298678
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1696506149786968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0773b1b8fed6b7468bdaedfdabfb6f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StaminaBar: {fileID: 0}
 --- !u!212 &212098366059744010
 SpriteRenderer:
   m_ObjectHideFlags: 1
