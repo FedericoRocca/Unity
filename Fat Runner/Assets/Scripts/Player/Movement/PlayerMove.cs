@@ -13,12 +13,13 @@ public class PlayerMove : MonoBehaviour {
 	// Variables para uso del script
 	private Rigidbody2D MyRigidBody;
 	private CapsuleCollider2D MyCollider;
-	private bool IsInAir;
+	public bool IsInAir;
     private bool IsFacingRight = true;
     public AudioSource JumpSound;
     public AudioSource DeathSound;
-	protected bool IsDead = false;
+	public bool IsDead = false;
 	private float DeadTime;
+    public bool IsMoving = false;
 
     public GameObject pies;
 
@@ -106,6 +107,11 @@ public class PlayerMove : MonoBehaviour {
 			Jump();
 		}
 
+        if( Input.GetKeyUp( KeyCode.LeftArrow ) || Input.GetKeyUp(KeyCode.RightArrow) )
+        {
+            IsMoving = false;
+        }
+
 	}
 
 	// Movimiento hacia la izquierda
@@ -113,6 +119,7 @@ public class PlayerMove : MonoBehaviour {
 	{
         MyRigidBody.velocity = new Vector2(-1 * Step, MyRigidBody.velocity.y);
         IsFacingRight = false;
+        IsMoving = true;
 	}
 
 	// Movimiento hacia la derecha
@@ -120,6 +127,7 @@ public class PlayerMove : MonoBehaviour {
 	{
         MyRigidBody.velocity = new Vector2(1 * Step, MyRigidBody.velocity.y);
         IsFacingRight = true;
+        IsMoving = true;
     }
 
 	// Salto

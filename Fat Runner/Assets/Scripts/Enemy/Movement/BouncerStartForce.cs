@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BouncerStartForce : MonoBehaviour {
 	public int LeftForce = 0;
+    public ParticleSystem JumpParticles;
 
 	// Use this for initialization
 	void Start () {
@@ -14,4 +15,10 @@ public class BouncerStartForce : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        ParticleSystem Particles = Instantiate(JumpParticles, transform.position, transform.rotation);
+        Destroy(Particles.gameObject, 1.0f);
+    }
 }

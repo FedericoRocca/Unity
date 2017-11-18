@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 50324168049571232}
   - component: {fileID: 61561068831082258}
   - component: {fileID: 114306444749883794}
+  - component: {fileID: 95443565047732300}
   m_Layer: 0
   m_Name: BouncerEnemySprite
   m_TagString: Enemy
@@ -52,7 +53,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1446058421887458}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 4.561, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4744361838714818}
@@ -65,7 +66,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1971240969141518}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 97.157364, y: -2.018519, z: 0}
+  m_LocalPosition: {x: -17.146, y: -2.0837948, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children:
   - {fileID: 4265075776190308}
@@ -117,6 +118,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.37071222, y: 0.3715646}
   m_EdgeRadius: 0
+--- !u!95 &95443565047732300
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1446058421887458}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ba99f75d3d292af439925b8c3215bdc3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114306444749883794
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -129,6 +147,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LeftForce: 200
+  JumpParticles: {fileID: 198023174856215254, guid: c1b90f9460728ed40b7b458226f9718e,
+    type: 2}
 --- !u!212 &212296697453570328
 SpriteRenderer:
   m_ObjectHideFlags: 1
