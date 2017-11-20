@@ -29,4 +29,14 @@ public class ScoreControl : MonoBehaviour {
 		ScoreText.text = ScoreString + Score;
 
 	}
+
+    public int GetScore()
+    {
+        return Score;
+    }
+
+    public void SetScore(int NewScore)
+    {
+        Score = NewScore;
+    }
 }

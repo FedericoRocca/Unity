@@ -8,9 +8,10 @@ public class StaminaBarManager : MonoBehaviour {
 	public Slider StaminaBar;
 	private Rigidbody2D MyRigidBody;
 	private PlayerMove DeathCaller;
+    float Augmentation = 25.0f;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
 		MyRigidBody = GetComponentInParent<Rigidbody2D>();
 		DeathCaller = GetComponentInParent<PlayerMove>();
 	}
@@ -34,4 +35,17 @@ public class StaminaBarManager : MonoBehaviour {
 		}
 		
 	}
+
+    public void MoreStamina()
+    {
+        if((StaminaBar.value + Augmentation) > 100 )
+        {
+            StaminaBar.value = 100;
+        }
+        else
+        {
+            StaminaBar.value = StaminaBar.value + Augmentation;
+        }
+    }
+
 }

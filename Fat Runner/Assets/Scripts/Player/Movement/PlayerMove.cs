@@ -20,6 +20,7 @@ public class PlayerMove : MonoBehaviour {
 	public bool IsDead = false;
 	private float DeadTime;
     public bool IsMoving = false;
+    private StaminaBarManager Health;
 
     public GameObject pies;
 
@@ -59,6 +60,8 @@ public class PlayerMove : MonoBehaviour {
 		MyCollider = transform.GetComponent<CapsuleCollider2D>();
 
 		DeadTime = 2.0f;
+
+        Health = GetComponentInChildren<StaminaBarManager>();
 	}
 	
 	// Update is called once per frame
@@ -159,6 +162,11 @@ public class PlayerMove : MonoBehaviour {
 			IsInAir = false;
 		}
 
+        if(other.transform.tag.Equals("Boss"))
+        {
+            DestroyPlayer();
+        }
+
 		if( other.transform.tag.Equals("Enemy") )
 		{
 
@@ -220,5 +228,14 @@ public class PlayerMove : MonoBehaviour {
 		}
 
 	}
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.transform.tag.Equals("Food"))
+        {
+            Health.MoreStamina();
+            Destroy( collision.gameObject );
+        }
+    }
 
 }

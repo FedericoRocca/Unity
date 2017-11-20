@@ -21,43 +21,197 @@ Platform assembly: C:\Users\frocc\Unity\Fat Runner\Build\FatRunner_Data\Managed\
 Loading C:\Users\frocc\Unity\Fat Runner\Build\FatRunner_Data\Managed\TextMeshPro-1.0.55.2017.1.0b12.dll into Unity Child Domain
 Platform assembly: C:\Users\frocc\Unity\Fat Runner\Build\FatRunner_Data\Managed\System.dll (this message is harmless)
 Platform assembly: C:\Users\frocc\Unity\Fat Runner\Build\FatRunner_Data\Managed\System.Core.dll (this message is harmless)
-- Completed reload, in  0.040 seconds
+- Completed reload, in  0.037 seconds
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 2.653089 ms
+UnloadTime: 1.305734 ms
 Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 7.536134 ms
+UnloadTime: 7.577424 ms
 
-Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 686.
-Total: 3.499686 ms (FindLiveObjects: 0.082578 ms CreateObjectMapping: 0.060117 ms MarkObjects: 1.797243 ms  DeleteObjects: 1.558095 ms)
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 741.
+Total: 1.846790 ms (FindLiveObjects: 0.068705 ms CreateObjectMapping: 0.025764 ms MarkObjects: 1.039501 ms  DeleteObjects: 0.712158 ms)
+
+FoodsPrefs.Lenght: 3
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Random.Range(0, FoodsPrefs.Length): 2
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+FoodsPrefs.Lenght: -1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Random.Range(0, FoodsPrefs.Length): 0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
 Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 1.777424 ms
+UnloadTime: 2.049273 ms
 
-Unloading 90 unused Assets to reduce memory usage. Loaded Objects now: 368.
-Total: 1.196730 ms (FindLiveObjects: 0.024443 ms CreateObjectMapping: 0.017506 ms MarkObjects: 0.225274 ms  DeleteObjects: 0.928845 ms)
+Unloading 129 unused Assets to reduce memory usage. Loaded Objects now: 369.
+Total: 1.382037 ms (FindLiveObjects: 0.033031 ms CreateObjectMapping: 0.020149 ms MarkObjects: 0.288364 ms  DeleteObjects: 1.039501 ms)
 
 Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.771615 ms
+UnloadTime: 0.410911 ms
 
-Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 686.
-Total: 1.036197 ms (FindLiveObjects: 0.032370 ms CreateObjectMapping: 0.030388 ms MarkObjects: 0.733629 ms  DeleteObjects: 0.239147 ms)
+Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 741.
+Total: 1.331499 ms (FindLiveObjects: 0.064741 ms CreateObjectMapping: 0.025434 ms MarkObjects: 0.962537 ms  DeleteObjects: 0.277794 ms)
+
+FoodsPrefs.Lenght: 3
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Random.Range(0, FoodsPrefs.Length): 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+FoodsPrefs.Lenght: -1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Random.Range(0, FoodsPrefs.Length): 0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
 Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 1.363870 ms
+UnloadTime: 1.699800 ms
 
-Unloading 90 unused Assets to reduce memory usage. Loaded Objects now: 368.
-Total: 1.105894 ms (FindLiveObjects: 0.023782 ms CreateObjectMapping: 0.017837 ms MarkObjects: 0.239478 ms  DeleteObjects: 0.823805 ms)
+Unloading 129 unused Assets to reduce memory usage. Loaded Objects now: 369.
+Total: 1.188142 ms (FindLiveObjects: 0.025103 ms CreateObjectMapping: 0.017176 ms MarkObjects: 0.239808 ms  DeleteObjects: 0.905723 ms)
+
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.762697 ms
+
+Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 741.
+Total: 1.197391 ms (FindLiveObjects: 0.032370 ms CreateObjectMapping: 0.032370 ms MarkObjects: 0.883262 ms  DeleteObjects: 0.248727 ms)
+
+FoodsPrefs.Lenght: 3
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Random.Range(0, FoodsPrefs.Length): 0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+FoodsPrefs.Lenght: -1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Random.Range(0, FoodsPrefs.Length): 0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.738117 ms
+
+Unloading 129 unused Assets to reduce memory usage. Loaded Objects now: 369.
+Total: 1.347024 ms (FindLiveObjects: 0.024443 ms CreateObjectMapping: 0.019818 ms MarkObjects: 0.284401 ms  DeleteObjects: 1.017700 ms)
+
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.386468 ms
+
+Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 741.
+Total: 1.212255 ms (FindLiveObjects: 0.041619 ms CreateObjectMapping: 0.024773 ms MarkObjects: 0.880949 ms  DeleteObjects: 0.264251 ms)
+
+FoodsPrefs.Lenght: 3
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Random.Range(0, FoodsPrefs.Length): 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+FoodsPrefs.Lenght: -1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Random.Range(0, FoodsPrefs.Length): 0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.630104 ms
+
+Unloading 129 unused Assets to reduce memory usage. Loaded Objects now: 369.
+Total: 1.409784 ms (FindLiveObjects: 0.025434 ms CreateObjectMapping: 0.019488 ms MarkObjects: 0.261609 ms  DeleteObjects: 1.102591 ms)
+
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.470038 ms
+
+Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 741.
+Total: 1.202676 ms (FindLiveObjects: 0.046244 ms CreateObjectMapping: 0.024112 ms MarkObjects: 0.888216 ms  DeleteObjects: 0.243442 ms)
+
+FoodsPrefs.Lenght: 3
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Random.Range(0, FoodsPrefs.Length): 0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+FoodsPrefs.Lenght: -1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Random.Range(0, FoodsPrefs.Length): 0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.583529 ms
+
+Unloading 129 unused Assets to reduce memory usage. Loaded Objects now: 369.
+Total: 1.288558 ms (FindLiveObjects: 0.026425 ms CreateObjectMapping: 0.019158 ms MarkObjects: 0.266894 ms  DeleteObjects: 0.975089 ms)
+
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.458807 ms
+
+Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 741.
+Total: 1.091360 ms (FindLiveObjects: 0.034683 ms CreateObjectMapping: 0.020809 ms MarkObjects: 0.755760 ms  DeleteObjects: 0.279776 ms)
+
+FoodsPrefs.Lenght: 3
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Random.Range(0, FoodsPrefs.Length): 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+FoodsPrefs.Lenght: -1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Random.Range(0, FoodsPrefs.Length): 0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Scene 'FirstLevel' couldn't be loaded because it has not been added to the build settings or the AssetBundle has not been loaded.
+To add a scene to the build settings use the menu File->Build Settings...
+ 
+(Filename:  Line: 141)
+
+Scene 'FirstLevel' couldn't be loaded because it has not been added to the build settings or the AssetBundle has not been loaded.
+To add a scene to the build settings use the menu File->Build Settings...
+ 
+(Filename:  Line: 141)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.556113 ms
+
+Unloading 129 unused Assets to reduce memory usage. Loaded Objects now: 369.
+Total: 1.320599 ms (FindLiveObjects: 0.023782 ms CreateObjectMapping: 0.017176 ms MarkObjects: 0.279116 ms  DeleteObjects: 0.999532 ms)
 
 Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.382504 ms
+UnloadTime: 0.500096 ms
 
-Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 391.
-Total: 0.557571 ms (FindLiveObjects: 0.022131 ms CreateObjectMapping: 0.015855 ms MarkObjects: 0.256654 ms  DeleteObjects: 0.261939 ms)
+Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 392.
+Total: 0.606788 ms (FindLiveObjects: 0.024112 ms CreateObjectMapping: 0.016185 ms MarkObjects: 0.279116 ms  DeleteObjects: 0.286383 ms)
 
 Setting up 4 worker threads for Enlighten.
-  Thread -> id: 322c -> priority: 1 
-  Thread -> id: 36a0 -> priority: 1 
-  Thread -> id: 3b3c -> priority: 1 
-  Thread -> id: 28ec -> priority: 1 
+  Thread -> id: 3b34 -> priority: 1 
+  Thread -> id: 2290 -> priority: 1 
+  Thread -> id: 4224 -> priority: 1 
+  Thread -> id: 1fc0 -> priority: 1 

@@ -8,6 +8,8 @@ TagManager:
   - Enemy
   - Wall
   - World
+  - Boss
+  - Food
   layers:
   - Default
   - TransparentFX

@@ -24,6 +24,9 @@ GameObject:
   - component: {fileID: 70050812387411454}
   - component: {fileID: 82408600896654388}
   - component: {fileID: 82027387506513156}
+  - component: {fileID: 111383627965210014}
+  - component: {fileID: 95806041951093390}
+  - component: {fileID: 114990005836840234}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -178,7 +181,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1053742024675596}
   m_LocalRotation: {x: 0.008726558, y: 0, z: 0, w: 0.999962}
-  m_LocalPosition: {x: 84.7, y: 6, z: 0.1}
+  m_LocalPosition: {x: -7.87, y: -2.51, z: -0.04}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 4037090861959926}
@@ -385,7 +388,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -478,6 +481,37 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!95 &95806041951093390
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1053742024675596}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ffc0e55e641090648926124d21c42ed1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!111 &111383627965210014
+Animation:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1053742024675596}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 0}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!114 &114129066304423860
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -492,8 +526,11 @@ MonoBehaviour:
   Step: 7
   JumpForce: 1100
   EnemyJumpForce: 750
+  IsInAir: 0
   JumpSound: {fileID: 82408600896654388}
   DeathSound: {fileID: 82027387506513156}
+  IsDead: 0
+  IsMoving: 0
   pies: {fileID: 1797014997670308}
 --- !u!114 &114855173658298678
 MonoBehaviour:
@@ -507,6 +544,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StaminaBar: {fileID: 0}
+--- !u!114 &114990005836840234
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1053742024675596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba82437adf71a264c9788f4e61756d40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212098366059744010
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -583,7 +631,7 @@ SpriteRenderer:
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: bd9bf4f9803e1394ea08a4ef4cd5d067, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 1
+  m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 0.48, y: 0.54}
