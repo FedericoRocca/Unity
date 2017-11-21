@@ -17,9 +17,34 @@ public class NextLevel : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if( collision.transform.tag.Equals("Player") )
+        Debug.Log("Entro en el trgger");
+        if (collision.transform.tag.Equals("Player")) 
         {
-            SceneManager.LoadScene("FirstLevel", LoadSceneMode.Single);
+            if (SceneManager.GetActiveScene().name.Equals("InGame"))
+            {
+                Debug.Log("Change to FirstLevel");
+                SceneManager.LoadScene("FirstLevel", LoadSceneMode.Single);
+                return;
+            }
         }
+        else
+        {
+            Debug.Log("False InGame");
+        }
+
+        if (collision.transform.tag.Equals("Player"))
+        {
+            if (SceneManager.GetActiveScene().name.Equals("FirstLevel"))
+            {
+                Debug.Log("Change to Victory");
+                SceneManager.LoadScene("Victory", LoadSceneMode.Single);
+                return;
+            }
+        }
+        else
+        {
+            Debug.Log("False FirstLevel");
+        }
+
     }
 }
