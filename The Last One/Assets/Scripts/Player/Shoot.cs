@@ -4,50 +4,49 @@ using UnityEngine;
 
 public class Shoot : MonoBehaviour {
 
-    private bool TryShoot = false;
     public float Cadency;
     private float TimePassed = 0.0f;
-    private bool IsShooting = false;
     public GameObject Weapon;
+    private GameObject WeaponCannonPos;
+    public ParticleSystem ShootParticle;
+    public float DurationTime;
+    private ParticleSystem CreatedParticle;
+    public AudioClip ShootClip;
 
-	// Use this for initialization
-	void Start () {
-		
+    // Use this for initialization
+    void Start () {
+        WeaponCannonPos = GameObject.FindGameObjectWithTag("Weapon");
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
+        if( Input.GetMouseButtonDown( 0 ) )
+        {
+            DoShot();
+        }
+
         if( Input.GetMouseButton( 0 ) )
         {
-            TryShoot = true;
+            TimePassed += Time.deltaTime;
+            if (TimePassed >= Cadency)
+            {
+                DoShot();
+                TimePassed = 0.0f;
+            }
         }
 
         if( Input.GetMouseButtonUp( 0 ) )
         {
-            TryShoot = false;
-        }
-
-        TimePassed += Time.deltaTime;
-
-        if( TimePassed >= 0.5f )
-        {
             TimePassed = 0.0f;
-            IsShooting = false;
-        }
-        else
-        {
-            IsShooting = true;
-        }
-
-        if( IsShooting )
-        {
-            Weapon.transform.Rotate(Weapon.transform.rotation.x - 7 * Time.deltaTime, Weapon.transform.rotation.y, Weapon.transform.rotation.z);
-        }
-        else
-        {
-            Weapon.transform.Rotate(Weapon.transform.rotation.x * Time.deltaTime, Weapon.transform.rotation.y, Weapon.transform.rotation.z);
         }
 	
 	}
+
+    private void DoShot()
+    {
+        CreatedParticle = Instantiate(ShootParticle, WeaponCannonPos.transform);
+        AudioSource.PlayClipAtPoint(ShootClip, WeaponCannonPos.transform.position);
+        Destroy(CreatedParticle.gameObject, DurationTime);
+    }
 }
